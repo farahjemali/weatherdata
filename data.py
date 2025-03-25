@@ -9,7 +9,7 @@ import threading
 
 # MySQL Database Connection Details (Replace with your FreeSQL details)
 DB_CONFIG = {
-    "host": "http://sql12.freesqldatabase.com/",
+    "host": "sql12.freesqldatabase.com",
     "user": "sql12769381",
     "password": "sl3Frk1Qjk",
     "database": "sql12769381"
