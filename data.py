@@ -7,6 +7,12 @@ import time
 from flask import Flask, jsonify
 import threading
 
+app = Flask(_name_)
+ ---------------------------------------------- copy yg d bwh ja
+
+# Set Malaysia Timezone
+malaysia_tz = pytz.timezone("Asia/Kuala_Lumpur")
+
 # MySQL Database Connection Details (Replace with your FreeSQL details)
 DB_CONFIG = {
     "host": "sql12.freesqldatabase.com",
@@ -29,7 +35,7 @@ def insert_weather_data(temp, humidity, wind_speed):
         sql = "INSERT INTO weather_data (timestamp, temperature, humidity, wind_speed) VALUES (%s, %s, %s, %s)"
         
         # Get the current timestamp in UTC
-        timestamp = datetime.now(pytz.utc)
+        timestamp = datetime.now(malaysia_tz).strftime('%Y-%m-%d %H:%M:%S')
         
         cursor.execute(sql, (timestamp, temp, humidity, wind_speed))
         conn.commit()
