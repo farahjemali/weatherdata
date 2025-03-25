@@ -62,6 +62,8 @@ def fetch_and_store_weather():
 
 # Flask endpoint to check stored weather data
 @app.route("/weather", methods=["GET"])
+def home():
+    return "Weather data updating service is running!"
 def get_weather_data():
     try:
         conn = pymysql.connect(**DB_CONFIG, cursorclass=pymysql.cursors.DictCursor)
