@@ -17,7 +17,7 @@ DB_CONFIG = {
 
 API_KEY = "c79e3c246371e187fbe3bb19688264cd"
 CITY = "Kuching"
-URL = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}"
+URL = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 
 app = Flask(__name__)
 
@@ -55,7 +55,7 @@ def fetch_and_store_weather():
         else:
             print("Error fetching data:", data)
 
-        time.sleep(300)  # Wait 5 minutes
+        time.sleep(10)  # Wait 5 minutes
 
 # Flask endpoint to check stored weather data
 @app.route("/weather", methods=["GET"])
