@@ -58,7 +58,7 @@ def fetch_and_store_weather():
         else:
             print("Error fetching data:", data)
 
-        time.sleep(10)  # Wait 5 minutes
+        time.sleep(300)  # Wait 5 minutes
 
 # Flask endpoint to check stored weather data
 @app.route("/weather", methods=["GET"])
