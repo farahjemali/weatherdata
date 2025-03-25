@@ -7,12 +7,6 @@ import time
 from flask import Flask, jsonify
 import threading
 
-app = Flask(_name_)
- ---------------------------------------------- copy yg d bwh ja
-
-# Set Malaysia Timezone
-malaysia_tz = pytz.timezone("Asia/Kuala_Lumpur")
-
 # MySQL Database Connection Details (Replace with your FreeSQL details)
 DB_CONFIG = {
     "host": "sql12.freesqldatabase.com",
@@ -26,6 +20,9 @@ CITY = "Kuching"
 URL = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 
 app = Flask(__name__)
+
+# Set Malaysia Timezone
+malaysia_tz = pytz.timezone("Asia/Kuala_Lumpur")
 
 # Function to insert data into MySQL
 def insert_weather_data(temp, humidity, wind_speed):
